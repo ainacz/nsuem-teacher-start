@@ -8,8 +8,9 @@
   <title>Старт преподавателя — НГУЭУ</title>
   <link rel="preload" href="assets/TT%20Runs%20DemiBold.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="icon" href="assets/nsuem-mark.png">
-  <link rel="stylesheet" href="styles.css">
-  <script src="app.js" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261029-2">
+  <script src="guide.js?v=20261029-2" defer></script>
+  <script src="app.js?v=20261029-2" defer></script>
 </head>
 <body>
   <a class="skip" href="#workspace">Перейти к содержанию</a>
@@ -18,7 +19,8 @@
     <div class="wrap header-inner">
       <a class="brand" href="#route" aria-label="НГУЭУ — Старт преподавателя"><img src="assets/nsuem-mark.png" width="132" height="48" alt="НГУЭУ"><span>Старт<br>преподавателя</span></a>
       <nav aria-label="Основные разделы">
-        <a href="#route" data-nav="route" aria-current="page">Мой маршрут</a>
+        <a href="#route" data-nav="route" aria-current="page">Маршрут</a>
+        <a href="#guide" data-nav="guide">Памятка</a>
         <a href="#services" data-nav="services">Сервисы</a>
         <a href="#help" data-nav="help">Помощь</a>
       </nav>
@@ -51,10 +53,10 @@
       <div class="wrap">
         <form class="search-box" role="search" onsubmit="return false">
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
-          <label class="sr-only" for="search">Поиск по шагам, сервисам и помощи</label>
-          <input type="search" id="search" placeholder="Что ищем? Например, почту, расписание или Moodle" autocomplete="off" maxlength="160">
+          <label class="sr-only" for="search">Поиск по маршруту, памятке, сервисам и помощи</label>
+          <input type="search" id="search" placeholder="Что ищем? Например, льготы, почту или Moodle" autocomplete="off" maxlength="160">
           <button type="button" id="clear-search" hidden>Очистить</button>
-          <span class="search-hint">Шаги · сервисы · помощь</span>
+          <span class="search-hint">Маршрут · памятка · сервисы</span>
         </form>
         <section id="search-results" aria-labelledby="search-heading" hidden><div class="section-heading"><h2 id="search-heading">Результаты поиска</h2><span id="search-count" role="status"></span></div><div id="results-list"></div></section>
 
@@ -75,6 +77,14 @@
           <p class="route-disclaimer">Это предложенный маршрут адаптации. Порядок оформления и обязательные процедуры уточняйте в университете. Личные отметки не заменяют официальное прохождение инструктажей.</p>
         </section>
 
+        <section id="guide-view" class="view" aria-labelledby="guide-title" hidden>
+          <div class="section-heading"><div><h2 id="guide-title">Памятка сотруднику</h2><p>Подробности из брошюры — с источниками, датами и статусом сведений.</p></div><span class="section-meta" id="guide-total"></span></div>
+          <aside class="guide-intro" aria-label="Как читать сведения"><h3>У каждого сведения есть основание</h3><p>Отделяем текст бумажной памятки от опубликованных материалов НГУЭУ. Условия льгот и процедуры применяются по действующим документам; путеводитель не подтверждает право на выплату.</p><a class="text-link" href="#sources">Как проверяли источники <span aria-hidden="true">↓</span></a></aside>
+          <div class="guide-controls"><div><label for="guide-category">Раздел памятки</label><select id="guide-category"><option value="all">Все разделы</option></select></div><span id="guide-count" role="status"></span></div>
+          <div id="guide-list"></div>
+          <details class="source-method" id="source-method"><summary>Источники и границы проверки</summary><div><h3>Исходная бумажная памятка</h3><p>Две фотографии предоставлены автором проекта. Год издания на них не указан; в тексте упоминается коллективный договор на 2024–2026 годы. Фотографии показывают исходное издание и не подтверждают действие каждой меры сегодня. QR-коды с фотографий не расшифровывались; адреса ресурсов подобраны по официальным разделам НГУЭУ.</p><div class="task-links"><a class="button secondary" href="assets/brochure-1.png" target="_blank" rel="noopener noreferrer">Фото памятки: разворот 1 ↗</a><a class="button secondary" href="assets/brochure-2.png" target="_blank" rel="noopener noreferrer">Фото памятки: разворот 2 ↗</a></div><h3>Что проверяли 29 октября 2026 года</h3><p>Сопоставляли темы памятки с опубликованными страницами НГУЭУ, справочником и отдельными пунктами коллективного договора. Просмотр ссылки не равен проверке её содержимого: недоступные страницы отмечены в соответствующих темах. Вход во внутренние системы, отправка обращений и получение услуг не испытывались.</p><h3>Как понимать статусы</h3><ul><li><strong>Из бумажной памятки:</strong> сведения переданы как содержание исходного издания; актуальность условий не установлена.</li><li><strong>Указано на сайте НГУЭУ:</strong> сведения опубликованы на просмотренной странице; они не подтверждены сотрудником подразделения.</li><li><strong>Опубликованный документ:</strong> приведён ориентир по документу с учётом необходимости проверить изменения и применимость пункта.</li><li><strong>Сопоставлены разные источники:</strong> сведения разделены по происхождению, а различающиеся цифры не объединены.</li></ul><p>Сверка источников не означает согласование путеводителя университетом. Для утверждения содержания нужен ответственный представитель вуза.</p></div></details>
+        </section>
+
         <section id="services-view" class="view" aria-labelledby="services-title" hidden><div class="section-heading"><div><h2 id="services-title">Рабочие сервисы</h2><p>Прямой путь к инструментам, которые пригодятся в работе.</p></div><span class="section-meta">Официальные ресурсы НГУЭУ</span></div><div id="services-list" class="services-grid"></div><div class="inline-note"><h3>Не получается войти?</h3><p>Путеводитель не выдаёт доступы. Порядок получения учётной записи уточните на кафедре или в технической поддержке.</p><a class="text-link" href="#help">Найти помощь <span aria-hidden="true">→</span></a></div></section>
 
         <section id="help-view" class="view" aria-labelledby="help-title" hidden><div class="section-heading"><div><h2 id="help-title">К кому обратиться</h2><p>Выберите вопрос. Подскажем, где искать ответственного специалиста.</p></div></div><div id="help-list" class="help-list"></div><div class="inline-note"><h3>Контакты могут меняться</h3><p>Используйте официальный справочник НГУЭУ для проверки сотрудника, кабинета и номера телефона.</p><a href="https://www.nsuem.ru/faculties/f-it/contacts.php" target="_blank" rel="noopener noreferrer" class="text-link">Открыть справочник <span aria-hidden="true">↗</span><span class="sr-only"> (в новой вкладке)</span></a></div></section>
@@ -83,7 +93,7 @@
       </div>
     </div>
   </main>
-  <footer class="footer wrap"><div><strong>Старт преподавателя</strong><span>Новосибирский государственный университет<br>экономики и управления</span></div><div><p>Прототип для обсуждения · 2026</p><button class="text-link" type="button" id="reset-progress">Сбросить мои отметки <span aria-hidden="true">↺</span></button><p class="storage-note">Отметки сохраняются только в этом браузере.</p><a href="https://nsuem.ru/employee/" target="_blank" rel="noopener noreferrer">Раздел «Сотруднику» на сайте НГУЭУ ↗</a><details class="about"><summary>О материалах путеводителя</summary><p>Темы взяты из памятки новому работнику. Ссылки сверены с официальными страницами НГУЭУ 28 октября 2026 года. Предложенная последовательность шагов требует согласования с университетом.</p><a href="https://nsuem.ru/smi/style.php" target="_blank" rel="noopener noreferrer">Фирменный стиль НГУЭУ ↗</a></details></div></footer>
+  <footer class="footer wrap"><div><strong>Старт преподавателя</strong><span>Новосибирский государственный университет<br>экономики и управления</span></div><div><p>Прототип для обсуждения · 2026</p><button class="text-link" type="button" id="reset-progress">Сбросить мои отметки <span aria-hidden="true">↺</span></button><p class="storage-note">Отметки сохраняются только в этом браузере.</p><a href="https://nsuem.ru/employee/" target="_blank" rel="noopener noreferrer">Раздел «Сотруднику» на сайте НГУЭУ ↗</a><details class="about"><summary>О материалах путеводителя</summary><p>Темы взяты из памятки новому работнику; источники сопоставлены 29 октября 2026 года. Статус и границы проверки указаны у каждой темы. Маршрут предложен для адаптации и не утверждён университетом.</p><a href="https://nsuem.ru/smi/style.php" target="_blank" rel="noopener noreferrer">Фирменный стиль НГУЭУ ↗</a></details></div></footer>
   <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
   <noscript><div class="noscript">Для маршрута и поиска включите JavaScript. Основные материалы доступны в <a href="https://nsuem.ru/employee/">официальном разделе «Сотруднику»</a>.</div></noscript>
 </body>
