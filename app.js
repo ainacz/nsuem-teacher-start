@@ -142,6 +142,7 @@ function boot() {
       const row=$(`task-${id}`);row.open=true;row.scrollIntoView({block:'center'});row.querySelector('summary').focus({preventScroll:true});return;
     }
     if(hash==='search') {showView(currentView);$('workspace').scrollIntoView();$('search').focus({preventScroll:true});return;}
+    if(hash==='workspace') {$('workspace').scrollIntoView();$('search').focus({preventScroll:true});return;}
     clearSearch();showView(['guide','services','help'].includes(hash)?hash:'route');
     if(!initial&&hash)$('workspace').scrollIntoView();
   }
