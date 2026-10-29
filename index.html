@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c54a0">
+  <meta name="description" content="Первые шаги преподавателя НГУЭУ: подготовка к работе, университетские сервисы и нужные контакты. Демонстрационная версия.">
+  <title>Старт преподавателя — НГУЭУ</title>
+  <link rel="preload" href="assets/TT%20Runs%20DemiBold.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="icon" href="assets/nsuem-mark.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#workspace">Перейти к содержанию</a>
+  <div class="demo-bar"><div class="wrap"><span><span class="demo-dot" aria-hidden="true"></span> Демонстрационная версия</span><span>Знакомство с университетом начинается здесь</span></div></div>
+  <header class="header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#route" aria-label="НГУЭУ — Старт преподавателя"><img src="assets/nsuem-mark.png" width="132" height="48" alt="НГУЭУ"><span>Старт<br>преподавателя</span></a>
+      <nav aria-label="Основные разделы">
+        <a href="#route" data-nav="route" aria-current="page">Мой маршрут</a>
+        <a href="#services" data-nav="services">Сервисы</a>
+        <a href="#help" data-nav="help">Помощь</a>
+      </nav>
+      <a href="#search" class="search-jump" aria-label="Поиск по путеводителю"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg><span>Найти ответ</span></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero wrap" id="welcome" aria-labelledby="welcome-title">
+      <div class="hero-copy">
+        <h1 id="welcome-title">Вы в НГУЭУ.<br>Давайте <span>освоимся.</span></h1>
+        <p>От первого знакомства с кафедрой<br class="desktop-break"> до первого занятия. Всё нужное — по шагам.</p>
+        <div class="hero-actions"><a class="button primary" href="#step/department" id="continue-link">Начать мой маршрут <span aria-hidden="true">↗</span></a><a class="text-link" href="#help">Мне нужна помощь <span aria-hidden="true">→</span></a></div>
+        <div class="hero-note"><span class="small-squares" aria-hidden="true"><i></i><i></i><i></i></span>Новая роль. Знакомый университет. Ваш темп.</div>
+      </div>
+      <aside class="journey" aria-label="Ваш личный прогресс">
+        <div class="journey-top"><h2>Большой путь <br>из простых шагов</h2><svg viewBox="0 0 24 24" class="journey-arrow" aria-hidden="true"><path d="M4 20 20 4M4 4h16v16"/></svg></div>
+        <ol class="journey-stages">
+          <li><span>1</span><div>Первое знакомство<small>Кафедра, оформление, кампус</small></div></li>
+          <li><span>2</span><div>До первого занятия<small>Почта, расписание, материалы</small></div></li>
+          <li><span>3</span><div>В рабочем ритме<small>Учебные системы и возможности</small></div></li>
+        </ol>
+        <div class="progress-caption"><span id="progress-text">0 из 10 шагов отмечено</span><strong id="progress-percent">0%</strong></div>
+        <progress id="progress" max="10" value="0" aria-label="Личный прогресс"></progress>
+        <p class="journey-foot">Можно начать с любого шага</p>
+      </aside>
+    </section>
+
+    <div class="workspace-outer" id="workspace">
+      <div class="wrap">
+        <form class="search-box" role="search" onsubmit="return false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+          <label class="sr-only" for="search">Поиск по шагам, сервисам и помощи</label>
+          <input type="search" id="search" placeholder="Что ищем? Например, почту, расписание или Moodle" autocomplete="off" maxlength="160">
+          <button type="button" id="clear-search" hidden>Очистить</button>
+          <span class="search-hint">Шаги · сервисы · помощь</span>
+        </form>
+        <section id="search-results" aria-labelledby="search-heading" hidden><div class="section-heading"><h2 id="search-heading">Результаты поиска</h2><span id="search-count" role="status"></span></div><div id="results-list"></div></section>
+
+        <section id="route-view" class="view" aria-labelledby="route-title">
+          <div class="section-heading"><div><h2 id="route-title">Ваш маршрут</h2><p>Не нужно разбираться во всём сразу. Начните с ближайшей задачи.</p></div><span class="section-meta">10 понятных шагов</span></div>
+          <div class="route-layout">
+            <aside class="route-sidebar">
+              <div class="stage-filters" role="group" aria-label="Этап маршрута">
+                <button class="stage-button active" data-stage="all" aria-pressed="true"><span>Весь маршрут</span><span class="stage-count">10</span></button>
+                <button class="stage-button" data-stage="0" aria-pressed="false"><span><small>01</small> Первое знакомство</span><span class="stage-count">3</span></button>
+                <button class="stage-button" data-stage="1" aria-pressed="false"><span><small>02</small> До первого занятия</span><span class="stage-count">4</span></button>
+                <button class="stage-button" data-stage="2" aria-pressed="false"><span><small>03</small> В рабочем ритме</span><span class="stage-count">3</span></button>
+              </div>
+              <div class="sidebar-note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8l4 4v14H4V3h4Zm8 0v5h4M8 12h8M8 16h6"/></svg><h3>Памятка всегда рядом</h3><p>Вернитесь к любой инструкции, даже когда шаг уже пройден.</p></div>
+            </aside>
+            <div><div class="route-toolbar"><span id="visible-count">Все этапы</span><label class="remaining-toggle"><input type="checkbox" id="remaining-only"> Только непройденные</label></div><div id="task-list"></div><div class="empty-state" id="route-empty" hidden><h3>Здесь всё отмечено!</h3><p>Выберите другой этап или покажите пройденные шаги.</p><button class="button secondary" id="show-completed" type="button">Показать пройденные</button></div></div>
+          </div>
+          <p class="route-disclaimer">Это предложенный маршрут адаптации. Порядок оформления и обязательные процедуры уточняйте в университете. Личные отметки не заменяют официальное прохождение инструктажей.</p>
+        </section>
+
+        <section id="services-view" class="view" aria-labelledby="services-title" hidden><div class="section-heading"><div><h2 id="services-title">Рабочие сервисы</h2><p>Прямой путь к инструментам, которые пригодятся в работе.</p></div><span class="section-meta">Официальные ресурсы НГУЭУ</span></div><div id="services-list" class="services-grid"></div><div class="inline-note"><h3>Не получается войти?</h3><p>Путеводитель не выдаёт доступы. Порядок получения учётной записи уточните на кафедре или в технической поддержке.</p><a class="text-link" href="#help">Найти помощь <span aria-hidden="true">→</span></a></div></section>
+
+        <section id="help-view" class="view" aria-labelledby="help-title" hidden><div class="section-heading"><div><h2 id="help-title">К кому обратиться</h2><p>Выберите вопрос. Подскажем, где искать ответственного специалиста.</p></div></div><div id="help-list" class="help-list"></div><div class="inline-note"><h3>Контакты могут меняться</h3><p>Используйте официальный справочник НГУЭУ для проверки сотрудника, кабинета и номера телефона.</p><a href="https://www.nsuem.ru/faculties/f-it/contacts.php" target="_blank" rel="noopener noreferrer" class="text-link">Открыть справочник <span aria-hidden="true">↗</span><span class="sr-only"> (в новой вкладке)</span></a></div></section>
+
+        <section class="campus-strip" aria-labelledby="campus-title"><div class="campus-symbol" aria-hidden="true"><span></span><span></span><span></span><span></span></div><div><h2 id="campus-title">За инструкциями — целый университет</h2><p>Познакомьтесь с корпусами и пространствами НГУЭУ.</p></div><a class="button secondary" href="https://nsuem.ru/3dnew/" target="_blank" rel="noopener noreferrer">Прогуляться по кампусу <span aria-hidden="true">↗</span><span class="sr-only"> (в новой вкладке)</span></a></section>
+      </div>
+    </div>
+  </main>
+  <footer class="footer wrap"><div><strong>Старт преподавателя</strong><span>Новосибирский государственный университет<br>экономики и управления</span></div><div><p>Прототип для обсуждения · 2026</p><button class="text-link" type="button" id="reset-progress">Сбросить мои отметки <span aria-hidden="true">↺</span></button><p class="storage-note">Отметки сохраняются только в этом браузере.</p><a href="https://nsuem.ru/employee/" target="_blank" rel="noopener noreferrer">Раздел «Сотруднику» на сайте НГУЭУ ↗</a><details class="about"><summary>О материалах путеводителя</summary><p>Темы взяты из памятки новому работнику. Ссылки сверены с официальными страницами НГУЭУ 28 октября 2026 года. Предложенная последовательность шагов требует согласования с университетом.</p><a href="https://nsuem.ru/smi/style.php" target="_blank" rel="noopener noreferrer">Фирменный стиль НГУЭУ ↗</a></details></div></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <noscript><div class="noscript">Для маршрута и поиска включите JavaScript. Основные материалы доступны в <a href="https://nsuem.ru/employee/">официальном разделе «Сотруднику»</a>.</div></noscript>
+</body>
+</html>
