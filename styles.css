@@ -98,3 +98,10 @@
 .article-evidence>summary::-webkit-details-marker{display:none}
 .article-evidence>summary:before{content:"+";font-size:20px}
 .article-evidence[open]>summary:before{content:"−"}
+
+.task-result{padding:14px 16px;background:var(--soft-blue);border-radius:8px;line-height:1.8}
+.article-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.article-actions .button{max-width:100%;overflow-wrap:anywhere}
+.help-contact{min-width:0;overflow-wrap:anywhere}
+.help-contact p{font-size:13px;line-height:1.8;margin:8px 0}
+.contact-actions{display:flex;flex-wrap:wrap;gap:18px}
