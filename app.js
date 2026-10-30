@@ -80,7 +80,17 @@ function restoreProgress(raw) {
 const icon = name => `<svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[name] || ICONS.file}</svg>`;
 const external = (title,url,css='text-link') => `<a class="${css}" href="${url}"${url.startsWith('https:')?' target="_blank" rel="noopener noreferrer"':''}>${title}${url.startsWith('https:')?' <span aria-hidden="true">↗</span><span class="sr-only"> (в новой вкладке)</span>':''}</a>`;
 
+function resetReloadNavigation() {
+  if(performance.getEntriesByType('navigation')[0]?.type!=='reload')return;
+  history.scrollRestoration='manual';
+  history.replaceState(history.state,'',location.pathname+location.search);
+  const top=()=>window.scrollTo({top:0,left:0,behavior:'instant'});
+  top();
+  window.addEventListener('load',top,{once:true});
+}
+
 function boot() {
+  resetReloadNavigation();
   const $ = id => document.getElementById(id);
   let done = new Set(), storageFailed = false, stage = 'all', currentView = 'route', toastTimer, resetTimer, resetArmed = false;
   try { done = restoreProgress(localStorage.getItem(KEY)); } catch { storageFailed = true; }
