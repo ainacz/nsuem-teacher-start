@@ -106,3 +106,13 @@
 .help-contact p{font-size:13px;line-height:1.8;margin:8px 0}
 .contact-actions{display:flex;flex-wrap:wrap;gap:18px}
 @media(max-width:600px){.hero-actions a>span[aria-hidden="true"]{display:none}}
+
+/* Detailed onboarding directory: contain the table on narrow screens. */
+.guide-table-scroll{max-width:100%;overflow-x:auto;margin-top:22px;border:1px solid var(--line);border-radius:8px}
+.guide-table{width:100%;min-width:540px;border-collapse:collapse;font-size:14px;line-height:1.65;text-align:left}
+.guide-table caption{text-align:left;font-weight:bold;padding:15px;background:var(--soft-blue)}
+.guide-table th,.guide-table td{padding:14px;vertical-align:top;border-bottom:1px solid var(--line)}
+.guide-table thead th{color:var(--blue);font-weight:bold}
+.guide-table tbody th{font-weight:normal;width:38%}
+.guide-table tbody tr:last-child>*{border-bottom:0}
+.article-body li{overflow-wrap:anywhere}

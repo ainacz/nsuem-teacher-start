@@ -8,9 +8,9 @@
   <title>Старт преподавателя — НГУЭУ</title>
   <link rel="preload" href="assets/TT%20Runs%20DemiBold.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="icon" href="assets/nsuem-mark.png">
-  <link rel="stylesheet" href="styles.css?v=20261030-3">
-  <script src="guide.js?v=20261030-2" defer></script>
-  <script src="app.js?v=20261030-3" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261030-4">
+  <script src="guide.js?v=20261030-4" defer></script>
+  <script src="app.js?v=20261030-4" defer></script>
 </head>
 <body>
   <a class="skip" href="#workspace">Перейти к содержанию</a>
@@ -19,7 +19,7 @@
       <a class="brand" href="#route" aria-label="НГУЭУ — Старт преподавателя"><img src="assets/nsuem-mark.png" width="132" height="48" alt="НГУЭУ"><span>Старт<br>преподавателя</span></a>
       <nav aria-label="Основные разделы">
         <a href="#route" data-nav="route" aria-current="page">Маршрут</a>
-        <a href="#guide" data-nav="guide">Памятка</a>
+        <a href="#guide" data-nav="guide">Справочник</a>
         <a href="#services" data-nav="services">Сервисы</a>
         <a href="#help" data-nav="help">Помощь</a>
       </nav>
@@ -52,10 +52,10 @@
       <div class="wrap">
         <form class="search-box" role="search" onsubmit="return false">
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
-          <label class="sr-only" for="search">Поиск по маршруту, памятке, сервисам и помощи</label>
+          <label class="sr-only" for="search">Поиск по маршруту, справочнику, сервисам и помощи</label>
           <input type="search" id="search" placeholder="Что ищем? Например, льготы, почту или Moodle" autocomplete="off" maxlength="160">
           <button type="button" id="clear-search" hidden>Очистить</button>
-          <span class="search-hint">Маршрут · памятка · сервисы</span>
+          <span class="search-hint">Маршрут · справочник · сервисы</span>
         </form>
         <section id="search-results" aria-labelledby="search-heading" hidden><div class="section-heading"><h2 id="search-heading">Результаты поиска</h2><span id="search-count" role="status"></span></div><div id="results-list"></div></section>
 
@@ -69,7 +69,7 @@
                 <button class="stage-button" data-stage="1" aria-pressed="false"><span><small>02</small> До первого занятия</span><span class="stage-count">4</span></button>
                 <button class="stage-button" data-stage="2" aria-pressed="false"><span><small>03</small> В рабочем ритме</span><span class="stage-count">3</span></button>
               </div>
-              <div class="sidebar-note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8l4 4v14H4V3h4Zm8 0v5h4M8 12h8M8 16h6"/></svg><h3>Памятка всегда рядом</h3><p>Вернитесь к любой инструкции, даже когда шаг уже пройден.</p></div>
+              <div class="sidebar-note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8l4 4v14H4V3h4Zm8 0v5h4M8 12h8M8 16h6"/></svg><h3>Инструкции всегда рядом</h3><p>Вернитесь к любой инструкции, даже когда шаг уже пройден.</p></div>
             </aside>
             <div><div class="route-toolbar"><span id="visible-count">Все этапы</span><label class="remaining-toggle"><input type="checkbox" id="remaining-only"> Только непройденные</label></div><div id="task-list"></div><div class="empty-state" id="route-empty" hidden><h3>Здесь всё отмечено!</h3><p>Выберите другой этап или покажите пройденные шаги.</p><button class="button secondary" id="show-completed" type="button">Показать пройденные</button></div></div>
           </div>
@@ -77,10 +77,10 @@
         </section>
 
         <section id="guide-view" class="view" aria-labelledby="guide-title" hidden>
-          <div class="section-heading"><div><h2 id="guide-title">Памятка преподавателю</h2><p>Оформление, работа, развитие и возможности университета.</p></div><span class="section-meta" id="guide-total"></span></div>
-          <div class="guide-controls"><div><label for="guide-category">Раздел памятки</label><select id="guide-category"><option value="all">Все разделы</option></select></div><span id="guide-count" role="status"></span></div>
+          <div class="section-heading"><div><h2 id="guide-title">Справочник преподавателя</h2><p>Оформление, работа, развитие и возможности университета.</p></div><span class="section-meta" id="guide-total"></span></div>
+          <div class="guide-controls"><div><label for="guide-category">Раздел справочника</label><select id="guide-category"><option value="all">Все разделы</option></select></div><span id="guide-count" role="status"></span></div>
           <div id="guide-list"></div>
-          <details class="source-method" id="source-method"><summary>Источники</summary><div><p>Памятка новому работнику, официальные страницы НГУЭУ и коллективный договор на 2024–2026 годы. Источники сопоставлены 29 октября 2026 года; контакты для карточек помощи повторно просмотрены 30 октября. Действующий порядок части процедур ещё требует подтверждения в подразделениях.</p><p>Условия поддержки уточняйте по действующей редакции документов, контакты — в справочнике университета.</p><div class="task-links"><a class="button secondary" href="assets/brochure-1.png" target="_blank" rel="noopener noreferrer">Памятка: разворот 1 ↗</a><a class="button secondary" href="assets/brochure-2.png" target="_blank" rel="noopener noreferrer">Памятка: разворот 2 ↗</a></div></div></details>
+          <details class="source-method" id="source-method"><summary>Источники</summary><div><p>Памятка новому работнику, официальные страницы НГУЭУ и коллективный договор на 2024–2026 годы. Материалы дополнены 30 октября 2026 года. Контакты и кабинеты сопоставлены со справочником НГУЭУ от 21 октября 2026 года. Действующий порядок части процедур ещё требует подтверждения в подразделениях.</p><p>Условия поддержки уточняйте по действующей редакции документов, контакты — в справочнике университета.</p><div class="task-links"><a class="button secondary" href="assets/brochure-1.png" target="_blank" rel="noopener noreferrer">Памятка: разворот 1 ↗</a><a class="button secondary" href="assets/brochure-2.png" target="_blank" rel="noopener noreferrer">Памятка: разворот 2 ↗</a></div></div></details>
         </section>
 
         <section id="services-view" class="view" aria-labelledby="services-title" hidden><div class="section-heading"><div><h2 id="services-title">Рабочие сервисы</h2><p>Прямой путь к инструментам, которые пригодятся в работе.</p></div><span class="section-meta">Официальные ресурсы НГУЭУ</span></div><div id="services-list" class="services-grid"></div><div class="inline-note"><h3>Не получается войти?</h3><p>Если учётной записи ещё нет, в разделе «Помощь» можно открыть официальный справочник без входа и найти контакты IT. Если доступ уже выдавали, подготовьте описание ошибки.</p><a class="text-link" href="#help">Найти помощь <span aria-hidden="true">→</span></a></div></section>
